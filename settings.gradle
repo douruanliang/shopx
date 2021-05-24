@@ -1,0 +1,9 @@
+rootProject.name = "shopx"
+include ':app'
+include ':app:module_category'
+include ':app:module_cart'
+include ':app:module_find'
+include ':app:module_common'
+include ':app:module_home'
+include ':app:module_my'
+include ':app:module_product'
