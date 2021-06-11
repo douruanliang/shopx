@@ -1,13 +1,16 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.kotlin_version = "1.5.0"
+    apply from: "$rootDir/dependencies.gradle"
+    ext {
+        versions.kotlin = '1.5.0'
+    }
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.2.1"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.android.tools.build:gradle:$versions.gradleBuildTool"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -20,7 +23,27 @@ allprojects {
         mavenCentral()
         jcenter() // Warning: this repository is going to shut down soon
     }
+
+ /*   def lifecycle_version = "2.2.0"
+    def fragment_version = "1.2.0"
+    def exifinterface_version = "1.2.0"
+    def transition_version = "1.2.0"
+    configurations.all{
+        resolutionStrategy.force 'androidx.annotation:annotation:1.1.0'
+        resolutionStrategy.force "androidx.lifecycle:lifecycle-common:$lifecycle_version"
+        resolutionStrategy.force "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+        resolutionStrategy.force "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+        resolutionStrategy.force "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+        resolutionStrategy.force "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+        resolutionStrategy.force "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+        resolutionStrategy.force "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+        resolutionStrategy.force "androidx.fragment:fragment:$fragment_version"
+        resolutionStrategy.force "androidx.exifinterface:exifinterface:$exifinterface_version"
+        resolutionStrategy.force "androidx.transition:transition:$transition_version"
+    }*/
 }
+
+
 
 task clean(type: Delete) {
     delete rootProject.buildDir
