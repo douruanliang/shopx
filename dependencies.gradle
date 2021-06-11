@@ -45,7 +45,7 @@ ext {
     kotlinstdlib = [kotlinstdlib: "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"]
     androidxCore = [androidxCore: "androidx.core:core-ktx:$versions.androidxCore"]
     androidxAppcompat = [androidxAppcompat: "androidx.appcompat:appcompat:$versions.androidxAppcompat"]
-    googleMaterial = [googleMaterial: "com.google.android.material:$versions.googleMaterial"]
+    googleMaterial = [googleMaterial: "com.google.android.material:material:$versions.googleMaterial"]
     constraintVersion = [constraintVersion: "androidx.constraintlayout:constraintlayout:$versions.constraintVersion"]
 
 
@@ -60,7 +60,7 @@ ext {
             kotlinstdlib.values(),
             androidxCore.values(),
             androidxAppcompat.values(),
-            googleMaterial.values(),
+            googleMaterial.values()
     ]
 
 }
