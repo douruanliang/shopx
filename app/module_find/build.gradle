@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
 }
 apply from: "$rootDir/dependencies.gradle"
@@ -7,8 +7,9 @@ android {
     compileSdkVersion versions.compileSdk
 
     defaultConfig {
-        applicationId "com.shopx.find"
-
+        if (!project.ext.moduleFind){
+            applicationId "com.shopx.find"
+        }
         minSdkVersion versions.minSdk
         targetSdkVersion versions.compileSdk
         versionCode versions.versionCode
@@ -36,6 +37,6 @@ dependencies {
 
     implementation baseAppDependencies
     testImplementation "junit:junit:$versions.junit"
-    androidTestImplementation "androidx.test.ext:junit:$versions.junit"
+    androidTestImplementation "androidx.test.ext:junit:$versions.androidxTest"
     androidTestImplementation "androidx.test.espresso:espresso-core:$versions.androidxEspresso"
 }

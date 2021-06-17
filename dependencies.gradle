@@ -25,11 +25,11 @@ ext {
             coroutinesVersion: '1.4.3',
 
             // unit test
-            junit            : '4.13.1',
+            junit            : '4.13.2',
             androidxTest     : '1.1.2',
             androidxEspresso : '3.3.0',
+
             runner           : '1.2.0',
-            junitExt         : '1.1.1',
             archCore         : '2.1.0',
             mockito          : '3.5.13',
             mockitoKotlin    : '2.2.0',
@@ -64,5 +64,15 @@ ext {
             androidxAppcompat.values(),
             googleMaterial.values()
     ]
+
+
+    moduleHome = true
+    moduleMy = true
+    moduleProduct = true
+    moduleFind = true
+    moduleCategory = true
+    moduleCart = true
+
+
 
 }

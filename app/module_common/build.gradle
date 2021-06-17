@@ -34,7 +34,5 @@ android {
 dependencies {
 
     implementation baseAppDependencies
-    testImplementation "junit:junit:$versions.junit"
-    androidTestImplementation "androidx.test.ext:junit:$versions.junit"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$versions.androidxEspresso"
+
 }

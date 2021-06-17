@@ -1,3 +1,4 @@
+
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
@@ -8,7 +9,9 @@ android {
     compileSdkVersion versions.compileSdk
 
     defaultConfig {
-
+        if (!project.ext.moduleCart){
+            applicationId "com.shopx.cart"
+        }
         minSdkVersion versions.minSdk
         targetSdkVersion versions.compileSdk
         versionCode versions.versionCode
@@ -38,6 +41,6 @@ dependencies {
     implementation baseAppDependencies
 
     testImplementation "junit:junit:$versions.junit"
-    androidTestImplementation "androidx.test.ext:junit:$versions.junit"
+    androidTestImplementation "androidx.test.ext:junit:$versions.androidxTest"
     androidTestImplementation "androidx.test.espresso:espresso-core:$versions.androidxEspresso"
 }

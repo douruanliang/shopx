@@ -46,4 +46,5 @@ dependencies {
     // 业务
     implementation project(path: ':app:module_cart')
     implementation project(path: ':app:module_common')
+    implementation project(path: ':app:lib-net')
 }

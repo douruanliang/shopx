@@ -1,14 +1,16 @@
+
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
 }
 apply from: "$rootDir/dependencies.gradle"
 android {
     compileSdkVersion versions.compileSdk
     buildToolsVersion "30.0.3"
-
     defaultConfig {
-        applicationId "com.shopx.home"
+        if (!project.ext.moduleHome){
+            applicationId "com.shopx.home"
+        }
         minSdkVersion versions.minSdk
         targetSdkVersion versions.compileSdk
         versionCode versions.versionCode
@@ -36,6 +38,6 @@ dependencies {
 
     implementation baseAppDependencies
     testImplementation "junit:junit:$versions.junit"
-    androidTestImplementation "androidx.test.ext:junit:$versions.junit"
+    androidTestImplementation "androidx.test.ext:junit:$versions.androidxTest"
     androidTestImplementation "androidx.test.espresso:espresso-core:$versions.androidxEspresso"
 }
