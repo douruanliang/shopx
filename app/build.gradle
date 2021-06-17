@@ -6,6 +6,14 @@ apply from: "$rootDir/dependencies.gradle"
 // 依赖插件脚本
 apply from: "$rootDir/tinker-support.gradle"
 android {
+    signingConfigs {
+        release {
+            storeFile file('../app/key/shopx')
+            storePassword '123456'
+            keyAlias 'shopx'
+            keyPassword '123456'
+        }
+    }
     compileSdkVersion versions.compileSdk
     buildToolsVersion "30.0.3"
 
