@@ -5,7 +5,7 @@ plugins {
 apply from: "$rootDir/dependencies.gradle"
 android {
     compileSdkVersion versions.compileSdk
-
+    resourcePrefix "find_"
     defaultConfig {
         if (!project.ext.moduleFind){
             applicationId "com.shopx.find"

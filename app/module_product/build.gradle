@@ -6,6 +6,7 @@ apply from: "$rootDir/dependencies.gradle"
 
 android {
     compileSdkVersion versions.compileSdk
+    resourcePrefix "product_"
     defaultConfig {
         if (!project.ext.moduleProduct){
             applicationId "com.shopx.product"

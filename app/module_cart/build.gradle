@@ -7,7 +7,7 @@ apply from: "$rootDir/dependencies.gradle"
 android {
 
     compileSdkVersion versions.compileSdk
-
+    resourcePrefix "cart_"
     defaultConfig {
         if (!project.ext.moduleCart){
             applicationId "com.shopx.cart"

@@ -8,6 +8,7 @@ apply from: "$rootDir/dependencies.gradle"
 
 android {
     compileSdkVersion versions.compileSdk
+    resourcePrefix "my_"
     defaultConfig {
         if (!project.ext.moduleMy){
             applicationId "com.shopx.my"
@@ -16,9 +17,8 @@ android {
         targetSdkVersion versions.compileSdk
         versionCode versions.versionCode
         versionName versions.versionName
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        signingConfig signingConfigs.debug
+
     }
 
     buildTypes {

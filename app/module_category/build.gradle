@@ -5,7 +5,7 @@ plugins {
 apply from: "$rootDir/dependencies.gradle"
 android {
     compileSdkVersion versions.compileSdk
-
+    resourcePrefix "category_"
     defaultConfig {
         if (!project.ext.moduleCategory){
             applicationId "com.shopx.category"

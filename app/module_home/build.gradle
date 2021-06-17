@@ -6,7 +6,7 @@ plugins {
 apply from: "$rootDir/dependencies.gradle"
 android {
     compileSdkVersion versions.compileSdk
-    buildToolsVersion "30.0.3"
+    resourcePrefix "home_"
     defaultConfig {
         if (!project.ext.moduleHome){
             applicationId "com.shopx.home"
