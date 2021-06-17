@@ -6,6 +6,14 @@ apply from: "$rootDir/dependencies.gradle"
 // 依赖插件脚本
 apply from: "$rootDir/tinker-support.gradle"
 android {
+    signingConfigs {
+        release {
+            storeFile file('/Users/dourl/AndroidStudioProjects/shopx/app/key/shopx')
+            storePassword '123456'
+            keyAlias 'shopx'
+            keyPassword '123456'
+        }
+    }
     compileSdkVersion versions.compileSdk
     buildToolsVersion "30.0.3"
 
@@ -25,8 +33,12 @@ android {
 
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.debug
         }
     }
     compileOptions {
@@ -47,11 +59,11 @@ dependencies {
     implementation project(path: ':app:lib-net')
 
     // 业务
-    implementation project(path: ':app:module_cart')
+ /*   implementation project(path: ':app:module_cart')
     implementation project(path: ':app:module_common')
     implementation project(path: ':app:module_home')
     implementation project(path: ':app:module_my')
     implementation project(path: ':app:module_category')
     implementation project(path: ':app:module_product')
-    implementation project(path: ':app:module_find')
+    implementation project(path: ':app:module_find')*/
 }
