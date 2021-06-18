@@ -4,7 +4,7 @@ android {
     compileSdkVersion versions.compileSdk
     resourcePrefix "home_"
     defaultConfig {
-        if (!project.ext.moduleHome){
+        if (project.ext.runAsApp){
             applicationId "com.shopx.home"
         }
         minSdkVersion versions.minSdk

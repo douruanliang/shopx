@@ -4,7 +4,7 @@ android {
     compileSdkVersion versions.compileSdk
     resourcePrefix "find_"
     defaultConfig {
-        if (!project.ext.moduleFind){
+        if (project.ext.runAsApp){
             applicationId "com.shopx.find"
         }
         minSdkVersion versions.minSdk

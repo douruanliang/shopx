@@ -5,7 +5,7 @@ android {
     compileSdkVersion versions.compileSdk
     resourcePrefix "product_"
     defaultConfig {
-        if (!project.ext.moduleProduct){
+        if (project.ext.runAsApp){
             applicationId "com.shopx.product"
         }
         minSdkVersion versions.minSdk

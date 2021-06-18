@@ -5,7 +5,7 @@ android {
     compileSdkVersion versions.compileSdk
     resourcePrefix "cart_"
     defaultConfig {
-        if (!project.ext.moduleCart){
+        if (project.ext.runAsApp){
             applicationId "com.shopx.cart"
         }
         minSdkVersion versions.minSdk

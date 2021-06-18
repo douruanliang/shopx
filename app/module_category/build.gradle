@@ -4,7 +4,7 @@ android {
     compileSdkVersion versions.compileSdk
     resourcePrefix "category_"
     defaultConfig {
-        if (!project.ext.moduleCategory){
+        if (project.ext.runAsApp){
             applicationId "com.shopx.category"
         }
         minSdkVersion versions.minSdk
