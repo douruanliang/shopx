@@ -25,7 +25,7 @@ public class SampleApplicationLike extends DefaultApplicationLike {
     @Override
     public void onCreate() {
         super.onCreate();
-        Bugly.init(getApplication(), "b6d7d6467f", false);
+        Bugly.init(getApplication(), "b6d7d6467f", true);
     }
 
     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)

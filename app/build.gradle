@@ -7,15 +7,20 @@ apply from: "$rootDir/dependencies.gradle"
 apply from: "$rootDir/tinker-support.gradle"
 android {
     signingConfigs {
-        release {
-            storeFile file('/Users/dourl/AndroidStudioProjects/shopx/app/key/shopx')
-            storePassword '123456'
-            keyAlias 'shopx'
-            keyPassword '123456'
+        try {
+            release {
+                storeFile file('./key/shopx')
+                storePassword '123456'
+                keyAlias 'shopx'
+                keyPassword '123456'
+            }
+        } catch (ex) {
+            throw new InvalidUserDataException(ex.toString())
         }
+
     }
     compileSdkVersion versions.compileSdk
-    buildToolsVersion "30.0.3"
+    buildToolsVersion versions.buildToolsVersion
 
     defaultConfig {
         applicationId "com.shopx"
@@ -26,7 +31,9 @@ android {
         versionName versions.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
         multiDexEnabled true
+        multiDexKeepProguard file("tinker_multidexkeep.pro")
 
     }
 
@@ -34,11 +41,15 @@ android {
     buildTypes {
         release {
             signingConfig signingConfigs.release
-            minifyEnabled false
+            minifyEnabled true // 打开混淆 生成mapping 文件
+            debuggable false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
             signingConfig signingConfigs.debug
+            debuggable true
+            minifyEnabled false
         }
     }
     compileOptions {
@@ -47,6 +58,20 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    packagingOptions {
+        exclude "/META-INF/**"
+    }
+    dexOptions {
+        jumboMode = true
+    }
+    sourceSets {
+        main { jniLibs.srcDirs = ['libs'] }
+    }
+    repositories { flatDir { dirs 'libs' } }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
     }
 }
 
