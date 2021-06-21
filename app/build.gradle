@@ -31,9 +31,7 @@ android {
         versionName versions.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
         multiDexEnabled true
-        multiDexKeepProguard file("tinker_multidexkeep.pro")
 
     }
 
@@ -84,11 +82,11 @@ dependencies {
     implementation project(path: ':app:lib-net')
 
     // 业务
-    implementation project(path: ':app:module_cart')
+    /*implementation project(path: ':app:module_cart')
     implementation project(path: ':app:module_common')
     implementation project(path: ':app:module_home')
     implementation project(path: ':app:module_my')
     implementation project(path: ':app:module_category')
     implementation project(path: ':app:module_product')
-    implementation project(path: ':app:module_find')
+    implementation project(path: ':app:module_find')*/
 }

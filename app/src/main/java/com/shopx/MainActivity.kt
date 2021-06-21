@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         btn = findViewById(R.id.id_btn)
-        btn?.text = "bug"
+        btn?.text = "bug——version-2"
 
     }
 }
