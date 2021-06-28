@@ -11,7 +11,7 @@ import com.tencent.bugly.beta.Beta;
 import com.tencent.tinker.entry.DefaultApplicationLike;
 
 public class SampleApplicationLike extends DefaultApplicationLike {
-    public static final String TAG = "Tinker.com.example.lib_tinker.SampleApplicationLike";
+    public static final String TAG = "SampleApplicationLike";
     public SampleApplicationLike(Application application,
                                  int tinkerFlags,
                                  boolean tinkerLoadVerifyFlag,

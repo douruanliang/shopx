@@ -1,8 +1,8 @@
 ext {
     versions = [
-            minSdk           : 19,
+            minSdk           : 21,
             compileSdk       : 30,
-            buildToolsVersion : '30.0.3',
+            buildToolsVersion: '30.0.3',
             versionCode      : 2,
             versionName      : '1.0.1',
 
@@ -13,10 +13,13 @@ ext {
             mavenPublish     : '0.15.1',
             kotlin           : '1.5.0',
 
-            androidxAppcompat: '1.2.0',
+            // app
             androidxCore     : '1.3.1',
-            lifecycleVersion : '2.3.0',
+            androidxAppcompat: '1.2.0',
+            googleMaterial   : '1.3.0',
 
+            lifecycleVersion : '2.3.0',
+            navigationUi     : '2.3.0',
             tinkerSupport    : '1.1.5',
 
             // network
@@ -39,10 +42,11 @@ ext {
 
             // for demo
             googleMaterial   : '1.3.0',
-            constraintVersion: '2.0.4',
+            constraintVersion: '2.0.1',
             glideVersion     : '4.12.0',
             baseAdapter      : '1.0.4',
             timberVersion    : '4.7.1'
+
     ]
 
 
@@ -51,6 +55,24 @@ ext {
     androidxAppcompat = [androidxAppcompat: "androidx.appcompat:appcompat:$versions.androidxAppcompat"]
     googleMaterial = [googleMaterial: "com.google.android.material:material:$versions.googleMaterial"]
     constraintVersion = [constraintVersion: "androidx.constraintlayout:constraintlayout:$versions.constraintVersion"]
+    navigationUi = [navigationUi: "androidx.navigation:navigation-ui-ktx:$versions.navigationUi"]
+    navigationFragment = [navigationFragment: "androidx.navigation:navigation-fragment-ktx:$versions.navigationUi"]
+
+
+    gson = [gson: "com.google.code.gson:gson:$versions.gsonVersion"]
+
+    //retrofit
+    retrofit = [
+            retrofit: "com.squareup.retrofit2:$versions.retrofitVersion",
+            gson    : "com.squareup.retrofit2:converter-gson:$versions.retrofitVersion",
+            //rxjava2 : "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofitVersion"
+    ]
+    //okhttp
+    okhttp = [
+           // logging: "com.squareup.okhttp3:logging-interceptor:3.8.1",
+            okhttp : "com.squareup.okhttp3:okhttp:$versions.okhttpVersion"
+           // okio   : "com.squareup.okio:okio:1.17.4"
+    ]
 
 
     baseAppDependencies = [
@@ -58,12 +80,20 @@ ext {
             androidxCore.values(),
             androidxAppcompat.values(),
             googleMaterial.values(),
-            constraintVersion.values()
+            constraintVersion.values(),
+            navigationUi.values(),
+            navigationFragment.values()
+
     ]
     baseLibDependencies = [
             kotlinstdlib.values(),
             androidxCore.values(),
             androidxAppcompat.values(),
             googleMaterial.values()
+    ]
+
+    netDependencies = [
+            okhttp.values(),
+            retrofit.values()
     ]
 }

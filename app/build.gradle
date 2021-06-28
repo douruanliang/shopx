@@ -1,10 +1,12 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 apply from: "$rootDir/dependencies.gradle"
 // 依赖插件脚本
 apply from: "$rootDir/tinker-support.gradle"
+
 android {
     signingConfigs {
         try {
@@ -32,17 +34,15 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
-
+        multiDexKeepProguard file("tinker_multidexkeep.pro")
     }
 
 
     buildTypes {
         release {
             signingConfig signingConfigs.release
-            minifyEnabled true // 打开混淆 生成mapping 文件
-            debuggable false
-            shrinkResources false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            minifyEnabled false // 打开混淆 生成mapping 文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), project.file('proguard-rules.pro')
         }
         debug {
             signingConfig signingConfigs.debug
@@ -57,24 +57,18 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
     packagingOptions {
         exclude "/META-INF/**"
-    }
-    dexOptions {
-        jumboMode = true
-    }
-    sourceSets {
-        main { jniLibs.srcDirs = ['libs'] }
-    }
-    repositories { flatDir { dirs 'libs' } }
-    lintOptions {
-        checkReleaseBuilds false
-        abortOnError false
     }
 }
 
 dependencies {
-
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation baseAppDependencies
 
     // APP 版本级别工具
@@ -82,11 +76,13 @@ dependencies {
     implementation project(path: ':app:lib-net')
 
     // 业务
-    /*implementation project(path: ':app:module_cart')
-    implementation project(path: ':app:module_common')
+    implementation project(path: ':app:module_cart')
     implementation project(path: ':app:module_home')
     implementation project(path: ':app:module_my')
     implementation project(path: ':app:module_category')
     implementation project(path: ':app:module_product')
-    implementation project(path: ':app:module_find')*/
+    implementation project(path: ':app:module_find')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+
 }
