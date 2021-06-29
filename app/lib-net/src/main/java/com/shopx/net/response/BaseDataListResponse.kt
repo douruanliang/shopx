@@ -4,7 +4,7 @@ import android.text.TextUtils
 import com.shopx.net.model.IDataList
 
 /**
- *  返回是 list
+ *  返回是 list数据
  */
 class BaseDataListResponse<T>(code: Int, message: String, val next: Int, val data: List<T>) :
     BaseResponse(code, message), IDataList<T> {

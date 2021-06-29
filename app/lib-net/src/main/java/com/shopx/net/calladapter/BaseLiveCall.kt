@@ -16,7 +16,7 @@ import java.util.concurrent.Executor
 /**
  * 自定义返回API 数据最外层数据类型 LiveCall<XXX>
  */
-class LiveCall<T>(private val call: Call<T>, private val callbackExecutor: Executor) : ICall<T> {
+class BaseLiveCall<T>(private val call: Call<T>, private val callbackExecutor: Executor) : ICall<T> {
     override fun cancel() {
         call.cancel()
     }
@@ -125,7 +125,7 @@ class LiveCall<T>(private val call: Call<T>, private val callbackExecutor: Execu
     override fun execute(): Response<T>?=call.execute()
 
     override fun clone(): ICall<T>? {
-        return LiveCall(call.clone(),callbackExecutor)
+        return BaseLiveCall(call.clone(),callbackExecutor)
     }
 
 

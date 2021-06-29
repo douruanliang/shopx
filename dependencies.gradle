@@ -69,8 +69,8 @@ ext {
     ]
     //okhttp
     okhttp = [
-           // logging: "com.squareup.okhttp3:logging-interceptor:3.8.1",
-            okhttp : "com.squareup.okhttp3:okhttp:$versions.okhttpVersion"
+            okhttp : "com.squareup.okhttp3:okhttp:$versions.okhttpVersion",
+            logging: "com.squareup.okhttp3:logging-interceptor:$versions.okhttpVersion"
            // okio   : "com.squareup.okio:okio:1.17.4"
     ]
 
