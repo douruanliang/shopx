@@ -39,7 +39,3 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-
-def is_gradle_3() {
-    return hasProperty('GRADLE_3') && GRADLE_3.equalsIgnoreCase('TRUE')
-}

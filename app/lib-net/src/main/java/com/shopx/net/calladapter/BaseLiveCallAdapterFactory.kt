@@ -11,9 +11,10 @@ class BaseLiveCallAdapterFactory : CallAdapter.Factory() {
         annotations: Array<out Annotation>,
         retrofit: Retrofit
     ): CallAdapter<*, *>? {
-        // <> 外面类型
+
         val observableType = getParameterUpperBound(0, returnType as ParameterizedType)
         val rawObservableType = getRawType(observableType)
+        // <> 外面类型
         if (rawObservableType != BaseLiveCall::class.java) {
             throw IllegalArgumentException("type must be a resource")
         }

@@ -55,6 +55,7 @@ ext {
     androidxAppcompat = [androidxAppcompat: "androidx.appcompat:appcompat:$versions.androidxAppcompat"]
     googleMaterial = [googleMaterial: "com.google.android.material:material:$versions.googleMaterial"]
     constraintVersion = [constraintVersion: "androidx.constraintlayout:constraintlayout:$versions.constraintVersion"]
+
     navigationUi = [navigationUi: "androidx.navigation:navigation-ui-ktx:$versions.navigationUi"]
     navigationFragment = [navigationFragment: "androidx.navigation:navigation-fragment-ktx:$versions.navigationUi"]
 
@@ -63,7 +64,7 @@ ext {
 
     //retrofit
     retrofit = [
-            retrofit: "com.squareup.retrofit2:$versions.retrofitVersion",
+            retrofit: "com.squareup.retrofit2:retrofit:$versions.retrofitVersion",
             gson    : "com.squareup.retrofit2:converter-gson:$versions.retrofitVersion",
             //rxjava2 : "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofitVersion"
     ]
