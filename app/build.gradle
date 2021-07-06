@@ -37,7 +37,6 @@ android {
         multiDexKeepProguard file("tinker_multidexkeep.pro")
     }
 
-
     buildTypes {
         release {
             signingConfig signingConfigs.release
@@ -65,6 +64,8 @@ android {
     packagingOptions {
         exclude "/META-INF/**"
     }
+
+
 }
 
 dependencies {
@@ -72,17 +73,25 @@ dependencies {
     implementation baseAppDependencies
 
     // APP 版本级别工具
-    implementation project(path: ':app:lib-tinker')
+    //implementation project(path: ':app:lib-tinker')
     implementation project(path: ':app:lib-net')
 
     // 业务
-    implementation project(path: ':app:module_cart')
+   /* implementation project(path: ':app:module_cart')
     implementation project(path: ':app:module_home')
     implementation project(path: ':app:module_my')
     implementation project(path: ':app:module_category')
     implementation project(path: ':app:module_product')
-    implementation project(path: ':app:module_find')
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation project(path: ':app:module_find')*/
 
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation project(path: ':app:lib-common')
+
+    def paging_version = "3.0.0"
+    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-moshi:2.9.0"
+    implementation "com.squareup.moshi:moshi-kotlin:1.11.0"
 
 }

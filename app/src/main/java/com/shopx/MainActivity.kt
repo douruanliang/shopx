@@ -1,59 +1,57 @@
 package com.shopx
 
+import android.content.res.ColorStateList
+import android.graphics.Color.red
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.view.MenuItem
+import androidx.core.content.ContextCompat
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.ui.NavigationUI
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.shopx.base.BaseActivity
 
-class MainActivity : AppCompatActivity() {
-    var navView: BottomNavigationView? = null
+class MainActivity : BaseActivity() {
+    var mNavView: BottomNavigationView? = null
+    var mNavController: NavController? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //var api: APIService = RetrofitManager.get().create(APIService::class.java)
+        initNavigation()
+    }
 
-        navView = findViewById(R.id.nav_view)
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.homeFragment, R.id.cartFragment, R.id.myFragment
-            )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView?.setupWithNavController(navController)
-        // 购物车数量
-
-        navView?.setOnNavigationItemSelectedListener { item ->
-           when(item.itemId){
-               R.id.homeFragment -> {
-                   addCartBadge(-10)
-                   true
-               }
-               R.id.cartFragment -> {
-                   addCartBadge(100)
-                   true
-               }
-               R.id.myFragment -> {
-                   addCartBadge(90)
-                   true
-               }
-               else -> false
-           }
-        }
-
+    fun initNavigation() {
+        mNavView = findViewById(R.id.nav_view)
+        //mNavView?.setItemIconTintList(null) //如果需要 自定义的icon图的话 需要屏蔽掉
+        mNavController = findNavController(R.id.nav_host_fragment_activity_main)
+        mNavView?.setOnNavigationItemSelectedListener(object :
+            BottomNavigationView.OnNavigationItemSelectedListener {
+            override fun onNavigationItemSelected(item: MenuItem): Boolean {
+                var selectId = item.itemId
+                var currentId = mNavController?.currentDestination?.id
+                if (selectId == currentId) return false
+                NavigationUI.onNavDestinationSelected(item, mNavController!!)
+                return true
+            }
+        })
     }
 
 
+    /**
+     *     购物车数量
+     */
     fun addCartBadge(num: Int) {
         //为cartFragment 创建 badge
-        val cartBadgeDrawable = navView?.getOrCreateBadge(R.id.cartFragment)
+        val cartBadgeDrawable = mNavView?.getBadge(R.id.cartFragment)
         if (num > 0) {
+            cartBadgeDrawable?.isVisible = true
             cartBadgeDrawable?.number = num
         } else {
-            navView?.removeBadge(R.id.cartFragment)
+            cartBadgeDrawable?.isVisible = false
+            cartBadgeDrawable?.clearNumber()
+            //navView?.removeBadge(R.id.cartFragment)
         }
 
     }

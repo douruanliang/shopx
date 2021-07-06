@@ -44,7 +44,7 @@ public class HttpApiBase {
     public static String getSecureBaseUrl() {
         //配置正式环境还是测试环境
         //return HOST == 0 ? "https://" + IPS[HOST] : "http://" + IPS[HOST];
-        return "http://192.168.8.108:8080/";
+        return "https://reqres.in/";
     }
 
     public static final int DEFAULT_MAX_CONNECTIONS = 5;
