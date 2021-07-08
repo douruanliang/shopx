@@ -7,14 +7,14 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.shopx.fragment.HomeFragment"
+        android:name="com.shopx.home.fragment.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+      />
     <fragment
         android:id="@+id/categoryFragment"
-        android:name="com.shopx.fragment.CategoryFragment"
+        android:name="com.shopx.category.fragment.CategoryFragment"
         android:label="fragment_category"
-        tools:layout="@layout/fragment_category" />
+       />
 <!--    <fragment
         android:id="@+id/findFragment"
         android:name="com.shopx.fragment.FindFragment"
@@ -22,12 +22,12 @@
         tools:layout="@layout/fragment_find" />-->
     <fragment
         android:id="@+id/cartFragment"
-        android:name="com.shopx.fragment.CartFragment"
+        android:name="com.shopx.cart.fragment.CartFragment"
         android:label="fragment_cart"
-        tools:layout="@layout/fragment_cart" />
+       />
     <fragment
         android:id="@+id/myFragment"
-        android:name="com.shopx.fragment.MyFragment"
+        android:name="com.shopx.my.fragment.MyFragment"
         android:label="fragment_my"
-        tools:layout="@layout/fragment_my" />
+ />
 </navigation>

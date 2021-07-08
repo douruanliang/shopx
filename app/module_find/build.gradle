@@ -37,7 +37,12 @@ android {
 
 dependencies {
 
-    implementation baseAppDependencies
+    if (project.ext.runAsApp){
+        implementation baseAppDependencies
+    }else{
+        implementation baseLibDependencies
+    }
+
     testImplementation "junit:junit:$versions.junit"
     androidTestImplementation "androidx.test.ext:junit:$versions.androidxTest"
     androidTestImplementation "androidx.test.espresso:espresso-core:$versions.androidxEspresso"

@@ -10,11 +10,11 @@ import com.shopx.net.utils.DeviceInfoUtils;
 public class Constants {
     public static boolean DEBUG = false;
 
-    public static String VERSION_NAME = BuildConfig.VERSION_NAME;
+    public static String VERSION_NAME = "BuildConfig.VERSION_NAME";
 
-    public static int VERSION_CODE = BuildConfig.VERSION_CODE;
+    public static int VERSION_CODE = 0; //BuildConfig.VERSION_CODE;
 
-    public static String PACKAGE_NAME = BuildConfig.APPLICATION_ID;
+    public static String PACKAGE_NAME = "BuildConfig.APPLICATION_ID";
 
     public static String DEVICEID;
 

@@ -1,7 +1,6 @@
 apply from: "$rootDir/config.gradle"
 apply from: "$rootDir/dependencies.gradle"
 
-
 android {
     compileSdkVersion versions.compileSdk
     resourcePrefix "my_"
