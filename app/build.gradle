@@ -26,7 +26,6 @@ android {
 
     defaultConfig {
         applicationId "com.shopx"
-
         minSdkVersion versions.minSdk
         targetSdkVersion versions.compileSdk
         versionCode versions.versionCode
@@ -73,7 +72,7 @@ dependencies {
     implementation baseAppDependencies
 
     // APP 版本级别工具
-    //implementation project(path: ':app:lib-tinker')
+    implementation project(path: ':app:lib-tinker')
     implementation project(path: ':app:lib-net')
 
     // 业务

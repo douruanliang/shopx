@@ -11,7 +11,7 @@ ext {
             ktlintGradle     : '0.41.0',
             dokkaGradle      : '1.4.30',
             mavenPublish     : '0.15.1',
-            kotlin           : '1.5.0',
+            kotlin           : '1.4.32',
 
             // app
             androidxCore     : '1.3.1',
@@ -72,9 +72,10 @@ ext {
     okhttp = [
             okhttp : "com.squareup.okhttp3:okhttp:$versions.okhttpVersion",
             logging: "com.squareup.okhttp3:logging-interceptor:$versions.okhttpVersion"
-           // okio   : "com.squareup.okio:okio:1.17.4"
+            // okio   : "com.squareup.okio:okio:1.17.4"
     ]
 
+    leak_canary = [leak_canary: "com.squareup.leakcanary:leakcanary-android:2.6"]
 
     baseAppDependencies = [
             kotlinstdlib.values(),
@@ -83,7 +84,8 @@ ext {
             googleMaterial.values(),
             constraintVersion.values(),
             navigationUi.values(),
-            navigationFragment.values()
+            navigationFragment.values(),
+            leak_canary.values()
 
     ]
     baseLibDependencies = [
