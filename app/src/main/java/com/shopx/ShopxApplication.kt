@@ -17,7 +17,6 @@ import com.elvishew.xlog.printer.file.backup.FileSizeBackupStrategy
 import com.elvishew.xlog.printer.file.clean.FileLastModifiedCleanStrategy
 import com.elvishew.xlog.printer.file.naming.DateFileNameGenerator
 import com.shopx.common.Global
-import com.shopx.common.UserUtil
 import com.shopx.net.HttpApiBase
 
 class ShopxApplication : Application() {

@@ -40,5 +40,6 @@ dependencies {
     // 指定tinker依赖版本（注：应用升级1.3.5版本起，不再内置tinker）
     implementation 'com.tencent.tinker:tinker-android-lib:1.9.14.3'
     implementation 'com.tencent.bugly:nativecrashreport:3.9.1'
+    implementation project(path: ':app:lib-common')
     //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.2.0
 }
