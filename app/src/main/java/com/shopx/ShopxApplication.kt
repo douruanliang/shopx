@@ -45,7 +45,7 @@ class ShopxApplication : Application() {
             AndroidPrinter() // Printer that print the log using android.util.Log
         val flatPattern = "{d yy/MM/dd HH:mm:ss} {l}|{t}: {m}"
         val filePrinter: Printer =
-            FilePrinter.Builder(UserUtil.appLogFolderPath(this)) // Specify the path to save log file
+            FilePrinter.Builder("shopx_log") // Specify the path to save log file
                 .fileNameGenerator(DateFileNameGenerator()) // Default: ChangelessFileNameGenerator("log")
                 .backupStrategy(
                     FileSizeBackupStrategy(

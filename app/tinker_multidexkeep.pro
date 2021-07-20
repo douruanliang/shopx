@@ -23,7 +23,7 @@
 }
 
 #your dex.loader patterns here
--keep class com.example.lib_tinker.SampleApplication {
+-keep class com.shopx.SampleApplication {
     <init>(...);
 }
 

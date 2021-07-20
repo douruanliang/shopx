@@ -72,9 +72,7 @@ dependencies {
     implementation baseAppDependencies
 
     // APP 版本级别工具
-    implementation project(path: ':app:lib-tinker')
-    implementation project(path: ':app:lib-net')
-
+    implementation project(path: ':app:lib-common')
     // 业务
     implementation project(path: ':app:module_cart')
     implementation project(path: ':app:module_home')
@@ -85,9 +83,14 @@ dependencies {
 
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation project(path: ':app:lib-common')
+    implementation 'com.tencent.bugly:crashreport_upgrade:1.5.23'
+    // 指定tinker依赖版本（注：应用升级1.3.5版本起，不再内置tinker）
+    implementation 'com.tencent.tinker:tinker-android-lib:1.9.14.3'
+    implementation 'com.tencent.bugly:nativecrashreport:3.9.1'
+
 
     def paging_version = "3.0.0"
+
     implementation "androidx.paging:paging-runtime-ktx:$paging_version"
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
     implementation "com.squareup.retrofit2:converter-moshi:2.9.0"

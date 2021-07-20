@@ -11,9 +11,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/app/lib-base" />
             <option value="$PROJECT_DIR$/app/lib-common" />
-            <option value="$PROJECT_DIR$/app/lib-net" />
-            <option value="$PROJECT_DIR$/app/lib-tinker" />
             <option value="$PROJECT_DIR$/app/module_cart" />
             <option value="$PROJECT_DIR$/app/module_category" />
             <option value="$PROJECT_DIR$/app/module_find" />
@@ -23,7 +22,6 @@
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
-        <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
     </option>
   </component>

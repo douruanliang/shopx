@@ -37,6 +37,7 @@ android {
 
 dependencies {
 
+    implementation project(path: ':app:lib-common')
     if (project.ext.runAsApp){
         implementation baseAppDependencies
     }else{

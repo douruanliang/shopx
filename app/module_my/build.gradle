@@ -39,6 +39,7 @@ android {
 dependencies {
 
     implementation baseAppDependencies
+    implementation project(path: ':app:lib-common')
     testImplementation "junit:junit:$versions.junit"
     androidTestImplementation "androidx.test.ext:junit:$versions.androidxTest"
     androidTestImplementation "androidx.test.espresso:espresso-core:$versions.androidxEspresso"

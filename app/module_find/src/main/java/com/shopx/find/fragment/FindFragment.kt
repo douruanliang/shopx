@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.base.lib_base.ui.BaseFragment
 import com.shopx.find.R
 
 
@@ -18,7 +19,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [MyFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FindFragment : Fragment() {
+class FindFragment : BaseFragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
